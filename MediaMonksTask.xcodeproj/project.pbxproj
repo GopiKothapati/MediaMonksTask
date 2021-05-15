@@ -14,7 +14,7 @@
 		0508EB05264ECF0C0089B630 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0508EB03264ECF0C0089B630 /* LaunchScreen.storyboard */; };
 		0508EB0E264ED2A20089B630 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB0D264ED2A20089B630 /* ApiManager.swift */; };
 		0508EB10264ED43C0089B630 /* ApiManagerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB0F264ED43C0089B630 /* ApiManagerHelpers.swift */; };
-		0508EB15264F48EA0089B630 /* AlbumlListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB14264F48EA0089B630 /* AlbumlListViewController.swift */; };
+		0508EB15264F48EA0089B630 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB14264F48EA0089B630 /* AlbumListViewController.swift */; };
 		0508EB17264F49060089B630 /* AlbumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB16264F49060089B630 /* AlbumListViewModel.swift */; };
 		0508EB19264F49160089B630 /* AlbumListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB18264F49160089B630 /* AlbumListDataModel.swift */; };
 		0508EB1B264F492A0089B630 /* PhotosListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB1A264F492A0089B630 /* PhotosListViewModel.swift */; };
@@ -34,7 +34,7 @@
 		0508EB06264ECF0C0089B630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0508EB0D264ED2A20089B630 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		0508EB0F264ED43C0089B630 /* ApiManagerHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerHelpers.swift; sourceTree = "<group>"; };
-		0508EB14264F48EA0089B630 /* AlbumlListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumlListViewController.swift; sourceTree = "<group>"; };
+		0508EB14264F48EA0089B630 /* AlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
 		0508EB16264F49060089B630 /* AlbumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModel.swift; sourceTree = "<group>"; };
 		0508EB18264F49160089B630 /* AlbumListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListDataModel.swift; sourceTree = "<group>"; };
 		0508EB1A264F492A0089B630 /* PhotosListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListViewModel.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		0508EB11264EFD4C0089B630 /* Album List */ = {
 			isa = PBXGroup;
 			children = (
-				0508EB14264F48EA0089B630 /* AlbumlListViewController.swift */,
+				0508EB14264F48EA0089B630 /* AlbumListViewController.swift */,
 				0508EB16264F49060089B630 /* AlbumListViewModel.swift */,
 				0508EB18264F49160089B630 /* AlbumListDataModel.swift */,
 			);
@@ -199,7 +199,7 @@
 				0508EB0E264ED2A20089B630 /* ApiManager.swift in Sources */,
 				0508EB10264ED43C0089B630 /* ApiManagerHelpers.swift in Sources */,
 				0508EB19264F49160089B630 /* AlbumListDataModel.swift in Sources */,
-				0508EB15264F48EA0089B630 /* AlbumlListViewController.swift in Sources */,
+				0508EB15264F48EA0089B630 /* AlbumListViewController.swift in Sources */,
 				0508EB1B264F492A0089B630 /* PhotosListViewModel.swift in Sources */,
 				0508EAF9264ECF0B0089B630 /* AppDelegate.swift in Sources */,
 				0508EB17264F49060089B630 /* AlbumListViewModel.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlbumlListViewController: UIViewController {
+class AlbumListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
