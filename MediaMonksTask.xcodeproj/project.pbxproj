@@ -22,6 +22,9 @@
 		0508EB1F264F49490089B630 /* PhotosListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB1E264F49490089B630 /* PhotosListDataModel.swift */; };
 		0508EB21264F495E0089B630 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB20264F495E0089B630 /* PhotoDetailsViewController.swift */; };
 		0508EB23264F49750089B630 /* PhotoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB22264F49750089B630 /* PhotoDetailsViewModel.swift */; };
+		0508EB25264F53D50089B630 /* PhotosListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB24264F53D50089B630 /* PhotosListCollectionViewCell.swift */; };
+		0508EB27264F53EE0089B630 /* AlbumListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB26264F53EE0089B630 /* AlbumListTableViewCell.swift */; };
+		0508EB29264F540E0089B630 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB28264F540E0089B630 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		0508EB1E264F49490089B630 /* PhotosListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListDataModel.swift; sourceTree = "<group>"; };
 		0508EB20264F495E0089B630 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		0508EB22264F49750089B630 /* PhotoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewModel.swift; sourceTree = "<group>"; };
+		0508EB24264F53D50089B630 /* PhotosListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListCollectionViewCell.swift; sourceTree = "<group>"; };
+		0508EB26264F53EE0089B630 /* AlbumListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListTableViewCell.swift; sourceTree = "<group>"; };
+		0508EB28264F540E0089B630 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 			children = (
 				0508EAF8264ECF0B0089B630 /* AppDelegate.swift */,
 				0508EAFA264ECF0B0089B630 /* SceneDelegate.swift */,
+				0508EB28264F540E0089B630 /* Constants.swift */,
 				0508EB11264EFD4C0089B630 /* Album List */,
 				0508EB13264F489C0089B630 /* Photos List */,
 				0508EB12264F48920089B630 /* PhotoDetails */,
@@ -103,6 +110,7 @@
 				0508EB14264F48EA0089B630 /* AlbumListViewController.swift */,
 				0508EB16264F49060089B630 /* AlbumListViewModel.swift */,
 				0508EB18264F49160089B630 /* AlbumListDataModel.swift */,
+				0508EB26264F53EE0089B630 /* AlbumListTableViewCell.swift */,
 			);
 			path = "Album List";
 			sourceTree = "<group>";
@@ -122,6 +130,7 @@
 				0508EB1A264F492A0089B630 /* PhotosListViewModel.swift */,
 				0508EB1C264F493E0089B630 /* PhotosListViewController.swift */,
 				0508EB1E264F49490089B630 /* PhotosListDataModel.swift */,
+				0508EB24264F53D50089B630 /* PhotosListCollectionViewCell.swift */,
 			);
 			path = "Photos List";
 			sourceTree = "<group>";
@@ -201,13 +210,16 @@
 				0508EB19264F49160089B630 /* AlbumListDataModel.swift in Sources */,
 				0508EB15264F48EA0089B630 /* AlbumListViewController.swift in Sources */,
 				0508EB1B264F492A0089B630 /* PhotosListViewModel.swift in Sources */,
+				0508EB29264F540E0089B630 /* Constants.swift in Sources */,
 				0508EAF9264ECF0B0089B630 /* AppDelegate.swift in Sources */,
 				0508EB17264F49060089B630 /* AlbumListViewModel.swift in Sources */,
+				0508EB27264F53EE0089B630 /* AlbumListTableViewCell.swift in Sources */,
 				0508EB21264F495E0089B630 /* PhotoDetailsViewController.swift in Sources */,
 				0508EAFB264ECF0B0089B630 /* SceneDelegate.swift in Sources */,
 				0508EB1D264F493E0089B630 /* PhotosListViewController.swift in Sources */,
 				0508EB23264F49750089B630 /* PhotoDetailsViewModel.swift in Sources */,
 				0508EB1F264F49490089B630 /* PhotosListDataModel.swift in Sources */,
+				0508EB25264F53D50089B630 /* PhotosListCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
