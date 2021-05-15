@@ -14,9 +14,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <visualEffectView opaque="NO" clipsSubviews="YES" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tum-Cg-UqW">
-                    <rect key="frame" x="221.5" y="122.5" width="157.5" height="55"/>
+                    <rect key="frame" x="221" y="122.5" width="158" height="55"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wwQ-p5-c8q">
-                        <rect key="frame" x="0.0" y="0.0" width="157" height="55"/>
+                        <rect key="frame" x="0.0" y="0.0" width="158" height="55"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uQd-5B-edk">

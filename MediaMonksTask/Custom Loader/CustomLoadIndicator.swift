@@ -1,9 +1,9 @@
+
 //
-//  MXLoader.swift
-//  SmartMX
+//  CustomLoadIndicator.swift
+//  MediaMonksTask
 //
-//  Created by Gopi K on 04/11/19.
-//  Copyright © 2019 TCS. All rights reserved.
+//  Created by Gopi K on 15/05/21.
 //
 
 import UIKit
