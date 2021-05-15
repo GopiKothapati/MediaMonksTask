@@ -29,6 +29,7 @@
 		0508EB30264F75920089B630 /* CustomLoadIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0508EB2E264F75920089B630 /* CustomLoadIndicator.xib */; };
 		0508EB31264F75920089B630 /* CustomLoadIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB2F264F75920089B630 /* CustomLoadIndicator.swift */; };
 		0508EB34264F78CF0089B630 /* CommonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB33264F78CF0089B630 /* CommonListViewModel.swift */; };
+		0508EB37264F797B0089B630 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB36264F797B0089B630 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		0508EB2E264F75920089B630 /* CustomLoadIndicator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLoadIndicator.xib; sourceTree = "<group>"; };
 		0508EB2F264F75920089B630 /* CustomLoadIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLoadIndicator.swift; sourceTree = "<group>"; };
 		0508EB33264F78CF0089B630 /* CommonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonListViewModel.swift; sourceTree = "<group>"; };
+		0508EB36264F797B0089B630 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,14 +91,15 @@
 			isa = PBXGroup;
 			children = (
 				0508EAF8264ECF0B0089B630 /* AppDelegate.swift */,
-				0508EB28264F540E0089B630 /* Constants.swift */,
-				0508EB2A264F565D0089B630 /* Helpers.swift */,
 				0508EB35264F78D70089B630 /* CommonClasses */,
 				0508EB32264F75CE0089B630 /* Custom Loader */,
 				0508EB11264EFD4C0089B630 /* Album List */,
 				0508EB13264F489C0089B630 /* Photos List */,
 				0508EB12264F48920089B630 /* PhotoDetails */,
 				0508EB0C264ED2850089B630 /* ApiManager */,
+				0508EB3A264F79960089B630 /* Constants */,
+				0508EB38264F79830089B630 /* Extensions */,
+				0508EB39264F798F0089B630 /* Helpers */,
 				0508EAFE264ECF0B0089B630 /* Main.storyboard */,
 				0508EB01264ECF0C0089B630 /* Assets.xcassets */,
 				0508EB03264ECF0C0089B630 /* LaunchScreen.storyboard */,
@@ -161,6 +164,30 @@
 				0508EB33264F78CF0089B630 /* CommonListViewModel.swift */,
 			);
 			path = CommonClasses;
+			sourceTree = "<group>";
+		};
+		0508EB38264F79830089B630 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0508EB36264F797B0089B630 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0508EB39264F798F0089B630 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0508EB2A264F565D0089B630 /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0508EB3A264F79960089B630 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0508EB28264F540E0089B630 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +268,7 @@
 				0508EB1B264F492A0089B630 /* PhotosListViewModel.swift in Sources */,
 				0508EB29264F540E0089B630 /* Constants.swift in Sources */,
 				0508EB31264F75920089B630 /* CustomLoadIndicator.swift in Sources */,
+				0508EB37264F797B0089B630 /* Extensions.swift in Sources */,
 				0508EAF9264ECF0B0089B630 /* AppDelegate.swift in Sources */,
 				0508EB17264F49060089B630 /* AlbumListViewModel.swift in Sources */,
 				0508EB27264F53EE0089B630 /* AlbumListTableViewCell.swift in Sources */,

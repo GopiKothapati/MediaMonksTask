@@ -1,5 +1,5 @@
 //
-//  Helpers.swift
+//  Extensions.swift
 //  MediaMonksTask
 //
 //  Created by 1634391 on 15/05/21.
@@ -7,13 +7,6 @@
 
 import Foundation
 import UIKit
-
-protocol CellDataProtocol: class {
-    associatedtype CellData
-    func assignData(with value:CellData)
-    var cellData: CellData? { get set }
-}
-
 extension String {
     var urlDescription: URL? {
         return URL.init(string: self)
