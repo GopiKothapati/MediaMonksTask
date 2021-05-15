@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Album: Codable {
+    let userId, id: Int
+    let title: String
+}
+

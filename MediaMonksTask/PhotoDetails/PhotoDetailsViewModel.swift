@@ -6,7 +6,19 @@
 //
 
 import UIKit
-
-class PhotoDetailsViewModel: NSObject {
-
+struct PhotoDetail {
+    let photo: Photo
+    let album: Album
+}
+class PhotoDetailsViewModel {
+    let imageURL, title, albumTitle: String
+    init?(photoDetail: PhotoDetail?) {
+        guard let photoDetail = photoDetail else {
+            return nil
+        }
+        self.imageURL = photoDetail.photo.url
+        self.title = photoDetail.photo.title
+        self.albumTitle = photoDetail.album.title
+        
+    }
 }
