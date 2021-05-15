@@ -59,7 +59,7 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (screenWidth - 30) / 2, height: 250)
+        return CGSize(width: (screenWidth - 30) / 2, height: 230)
     }
     
 }
