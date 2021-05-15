@@ -6,6 +6,11 @@
 //
 
 import Foundation
+
+struct ResponseObject {
+    let url: URL?
+    let data: Data
+}
 enum HTTPMethod: String {
     case GET, POST, PUT, UPDATE
 }

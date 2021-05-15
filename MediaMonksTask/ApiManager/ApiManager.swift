@@ -8,11 +8,10 @@
 import UIKit
 
 protocol ApiManagerDelegate: class {
-    func apiResponseReceived(with result: Result<Data, ApiError>)
+    func apiResponseReceived(with result: Result<ResponseObject, ApiError>)
 }
 
 final class ApiManager: NSObject {
-    private let BASE_URL = "https://jsonplaceholder.typicode.com/"
     private weak var delegate: ApiManagerDelegate?
     private var session: URLSession {
         let urlSessionConfig = URLSessionConfiguration.ephemeral
@@ -24,20 +23,32 @@ final class ApiManager: NSObject {
     init(delegate: ApiManagerDelegate?) {
         self.delegate = delegate
     }
-    func requestApi(for url: String, with httpmethod: HTTPMethod = .GET) {
-        guard let apiURL = URL.init(string: BASE_URL + url) else {
-            return
-        }
-        var urlRequest = URLRequest(url: apiURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 15)
-        urlRequest.httpMethod = httpmethod.rawValue
+    
+    func requestApi(for url: String, queryItems: [URLQueryItem]? = nil, with httpmethod: HTTPMethod = .GET) throws {
+        
+        let urlRequest = try createURLRequest(url: url,queryItems,with: httpmethod)
         let dataTask = session.dataTask(with: urlRequest)
         dataTask.resume()
     }
     
+    private func createURLRequest(url: String,_ queryItems: [URLQueryItem]? = nil, with httpmethod: HTTPMethod = .GET) throws -> URLRequest {
+        var urlComponents = URLComponents(string: url)
+        urlComponents?.queryItems = queryItems
+        guard let url  = urlComponents?.url else {
+            throw ApiError.invalidUrl
+        }
+        guard let absoluteURL = URL(string: url.absoluteString.replacingOccurrences(of: "?=", with: "?")) else { throw ApiError.invalidUrl }
+        var urlRequest = URLRequest(url: absoluteURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 15)
+        urlRequest.httpMethod = httpmethod.rawValue
+        return urlRequest
+    }
+    
+    
     func handleDataTaskResponse(with data: Data, and dataTask: URLSessionDataTask) {
         do{
             _ = try self.validateHttpResponse(urlResponse: dataTask.response).get()
-            self.delegate?.apiResponseReceived(with: .success(data))
+            let responseObject = ResponseObject(url: dataTask.response?.url, data: data)
+            self.delegate?.apiResponseReceived(with: .success(responseObject))
         } catch {
             self.delegate?.apiResponseReceived(with: .failure(.customError(error.localizedDescription)))
         }
@@ -63,15 +74,18 @@ extension ApiManager: URLSessionDataDelegate {
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         print("dataTask:\(dataTask.taskDescription ?? "N/A")")
         session.finishTasksAndInvalidate()
-        handleDataTaskResponse(with: data, and: dataTask)
+        DispatchQueue.main.async { [weak self] in
+            self?.handleDataTaskResponse(with: data, and: dataTask)
+        }
+        
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         session.finishTasksAndInvalidate()
-
         if let error = error {
-            //MXHelpers.logsFileCreationandWriting(with: "\( String(describing: error))")
-            delegate?.apiResponseReceived(with: .failure(.serverError(error.localizedDescription)))
+            DispatchQueue.main.async { [weak self] in
+                self?.delegate?.apiResponseReceived(with: .failure(.serverError(error.localizedDescription)))
+            }
         }
     }
 
