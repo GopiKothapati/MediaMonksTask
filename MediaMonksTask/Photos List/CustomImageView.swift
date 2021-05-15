@@ -55,18 +55,24 @@ class CustomImageView: UIImageView {
 
 extension CustomImageView: ApiManagerDelegate {
     func apiResponseReceived(with result: Result<ResponseObject, ApiError>) {
-        do {
-            let responseObject = try result.get()
-            if let responseURL = responseObject.url, let imageToCache = UIImage(data: responseObject.data) {
-                if self.imageURL == responseURL {
-                    self.image = imageToCache
-                }
-                imageCache.setObject(imageToCache, forKey: responseURL as NSURL)
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else {
+                return
             }
-            activityIndicator.stopAnimating()
-        } catch {
-            self.activityIndicator.stopAnimating()
+            do {
+                let responseObject = try result.get()
+                if let responseURL = responseObject.url, let imageToCache = UIImage(data: responseObject.data) {
+                    if strongSelf.imageURL == responseURL {
+                        strongSelf.image = imageToCache
+                    }
+                    strongSelf.imageCache.setObject(imageToCache, forKey: responseURL as NSURL)
+                }
+                strongSelf.activityIndicator.stopAnimating()
+            } catch {
+                strongSelf.activityIndicator.stopAnimating()
+            }
         }
+        
     }
 }
 

@@ -52,6 +52,11 @@ class AlbumListViewController: UIViewController {
 }
 
 extension AlbumListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let radius = cell.contentView.layer.cornerRadius
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: radius).cgPath
+        
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: SegueId.photosListViewController.rawValue, sender: self.viewModel.dataModels[indexPath.row])
     }
@@ -59,12 +64,15 @@ extension AlbumListViewController: UITableViewDelegate {
 
 extension AlbumListViewController: ApiManagerDelegate {
     func apiResponseReceived(with result: Result<ResponseObject, ApiError>) {
-        do {
-            stopLoading()
-            try viewModel.parseResponse(with: result)
-            albumlistTableView.reloadData()
-        } catch {
-            print(error)
+        DispatchQueue.main.async { [weak self] in
+            do {
+                self?.stopLoading()
+                try self?.viewModel.parseResponse(with: result)
+                self?.albumlistTableView.reloadData()
+            } catch {
+                print(error)
+            }
         }
+        
     }
 }

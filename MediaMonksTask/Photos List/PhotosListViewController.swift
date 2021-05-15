@@ -13,6 +13,8 @@ class PhotosListViewController: UIViewController {
         let viewModel = PhotosListViewModel(delegate: self)
         return viewModel
     }()
+    private let screenWidth = UIScreen.main.bounds.size.width
+
     var passedAlbum: Album?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +45,10 @@ class PhotosListViewController: UIViewController {
             photoDetailsViewController.passedPhotoDetail = dataObject
         }
     }
-
+    
 }
 
-extension PhotosListViewController: UICollectionViewDelegate {
+extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let album = passedAlbum else {
@@ -56,16 +58,23 @@ extension PhotosListViewController: UICollectionViewDelegate {
         performSegue(withIdentifier: SegueId.photoDetailsViewController.rawValue, sender: photoDetail)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (screenWidth - 30) / 2, height: 250)
+    }
+    
 }
 
 extension PhotosListViewController: ApiManagerDelegate {
     func apiResponseReceived(with result: Result<ResponseObject, ApiError>) {
-        do {
-            stopLoading()
-            try viewModel.parseResponse(with: result)
-            photosListCollectionView.reloadData()
-        } catch {
-            print(error)
+        DispatchQueue.main.async { [weak self] in
+            
+            do {
+                self?.stopLoading()
+                try self?.viewModel.parseResponse(with: result)
+                self?.photosListCollectionView.reloadData()
+            } catch {
+                print(error)
+            }
         }
     }
 }

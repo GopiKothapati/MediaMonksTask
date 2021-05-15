@@ -47,10 +47,7 @@ extension ApiError: LocalizedError {
 }
 
 final class MXParser {
-    class func parse<D: Decodable>(data: Data?) -> Result<D,ApiError> {
-        guard let data = data, data.isEmpty else {
-            return .failure(ApiError.noData)
-        }
+    class func parse<D: Decodable>(data: Data) -> Result<D,ApiError> {
         do {
             let values = try JSONDecoder().decode(D.self, from: data)
             return .success(values)

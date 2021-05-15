@@ -40,3 +40,14 @@ extension UIViewController {
         }
     }
 }
+
+extension UIStackView {
+    @discardableResult
+    func addBackground(color: UIColor) -> UIView {
+        let subView = UIView(frame: bounds)
+        subView.backgroundColor = color
+        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        insertSubview(subView, at: 0)
+        return subView
+    }
+}

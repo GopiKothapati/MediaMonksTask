@@ -12,6 +12,9 @@ class AlbumListTableViewCell: UITableViewCell, CellDataProtocol {
     typealias CellData = Album
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var mainBackground: UIView!
+    @IBOutlet weak var shadowLayer: ShadowView!
+
     var cellData: Album? {
         didSet {
             if let cellData = cellData {
@@ -22,13 +25,14 @@ class AlbumListTableViewCell: UITableViewCell, CellDataProtocol {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+
         // Initialization code
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.contentView.layer.cornerRadius = 10
-        self.contentView.clipsToBounds = true
+        mainBackground.layer.cornerRadius = 8
+        mainBackground.layer.masksToBounds = true
     }
     
     func assignData(with value: Album) {
@@ -42,4 +46,22 @@ class AlbumListTableViewCell: UITableViewCell, CellDataProtocol {
         // Configure the view for the selected state
     }
 
+}
+
+class ShadowView: UIView {
+    override var bounds: CGRect {
+        didSet {
+            setupShadow()
+        }
+    }
+
+    private func setupShadow() {
+        self.layer.cornerRadius = 8
+        self.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.layer.shadowRadius = 3
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: 8, height: 8)).cgPath
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
 }

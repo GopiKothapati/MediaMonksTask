@@ -7,8 +7,7 @@
 
 import UIKit
 
-class PhotosListViewModel: CommonListViewModel<Photo>, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    private let screenWidth = UIScreen.main.bounds.size.width
+class PhotosListViewModel: CommonListViewModel<Photo>, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let photosCell = collectionView.dequeueReusableCell(withReuseIdentifier: ReuseID.photosListCell.rawValue, for: indexPath) as? PhotosListCollectionViewCell else {
@@ -26,8 +25,6 @@ class PhotosListViewModel: CommonListViewModel<Photo>, UICollectionViewDataSourc
         return dataModels.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ((screenWidth * 0.85) - 20) / 2, height: 250)
-    }
+   
 }
 

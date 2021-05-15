@@ -26,8 +26,14 @@ class PhotoDetailsViewController: UIViewController {
     private func setup() {
         if let viewModel = self.viewModel {
             self.photoimageView.loadImageWithUrl(viewModel.imageURL)
+            self.idLabel.text = viewModel.id
             self.titleLabel.text = viewModel.title
             self.albumTitleLabel.text = viewModel.albumTitle
+        }
+        if let stackview = view.viewWithTag(100) as? UIStackView {
+            let backgroundView = stackview.addBackground(color: .white)
+            stackview.layer.cornerRadius = 8
+            stackview.clipsToBounds = true
         }
     }
     
