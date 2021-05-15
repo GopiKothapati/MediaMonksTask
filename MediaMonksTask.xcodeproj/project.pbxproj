@@ -28,6 +28,7 @@
 		0508EB2D264F5CDC0089B630 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB2C264F5CDC0089B630 /* CustomImageView.swift */; };
 		0508EB30264F75920089B630 /* CustomLoadIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0508EB2E264F75920089B630 /* CustomLoadIndicator.xib */; };
 		0508EB31264F75920089B630 /* CustomLoadIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB2F264F75920089B630 /* CustomLoadIndicator.swift */; };
+		0508EB34264F78CF0089B630 /* CommonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508EB33264F78CF0089B630 /* CommonListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		0508EB2C264F5CDC0089B630 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		0508EB2E264F75920089B630 /* CustomLoadIndicator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLoadIndicator.xib; sourceTree = "<group>"; };
 		0508EB2F264F75920089B630 /* CustomLoadIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLoadIndicator.swift; sourceTree = "<group>"; };
+		0508EB33264F78CF0089B630 /* CommonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				0508EAF8264ECF0B0089B630 /* AppDelegate.swift */,
 				0508EB28264F540E0089B630 /* Constants.swift */,
 				0508EB2A264F565D0089B630 /* Helpers.swift */,
+				0508EB35264F78D70089B630 /* CommonClasses */,
 				0508EB32264F75CE0089B630 /* Custom Loader */,
 				0508EB11264EFD4C0089B630 /* Album List */,
 				0508EB13264F489C0089B630 /* Photos List */,
@@ -150,6 +153,14 @@
 				0508EB2E264F75920089B630 /* CustomLoadIndicator.xib */,
 			);
 			path = "Custom Loader";
+			sourceTree = "<group>";
+		};
+		0508EB35264F78D70089B630 /* CommonClasses */ = {
+			isa = PBXGroup;
+			children = (
+				0508EB33264F78CF0089B630 /* CommonListViewModel.swift */,
+			);
+			path = CommonClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +245,7 @@
 				0508EB17264F49060089B630 /* AlbumListViewModel.swift in Sources */,
 				0508EB27264F53EE0089B630 /* AlbumListTableViewCell.swift in Sources */,
 				0508EB2D264F5CDC0089B630 /* CustomImageView.swift in Sources */,
+				0508EB34264F78CF0089B630 /* CommonListViewModel.swift in Sources */,
 				0508EB21264F495E0089B630 /* PhotoDetailsViewController.swift in Sources */,
 				0508EB2B264F565D0089B630 /* Helpers.swift in Sources */,
 				0508EB1D264F493E0089B630 /* PhotosListViewController.swift in Sources */,
